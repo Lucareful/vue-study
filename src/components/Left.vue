@@ -1,0 +1,54 @@
+<!--
+ * @Author: Luenci
+ * @Date: 2022-11-29 14:50:26
+ * @LastEditors: Luenci
+ * @LastEditTime: 2022-11-30 18:15:33
+ * @FilePath: /demo-frist/src/components/Left.vue
+ * @Description: 
+ * 
+ * Copyright (c) 2022 by Luenci, All Rights Reserved. 
+-->
+<template>
+  <div class="left-container">
+    <h2>我是left</h2>
+    <hr />
+    <Mycount :init="9"></Mycount>
+    <hr />
+    <button @click="send()">点我传递信息给我的好兄弟</button>
+  </div>
+</template>
+
+<script>
+import eventBus from "./evnetBus.js";
+
+export default {
+  data() {
+    return { str: "luenci 兄弟组件传值" };
+  },
+  methods: {
+    send() {
+      // 通过 eventBus 发送数据
+      eventBus.emit("share", this.str);
+    },
+  },
+};
+</script>
+
+<style lang="less" scoped>
+.left-container {
+  padding: 0 20px 20px;
+  background-color: yellow;
+  min-height: 250px;
+  flex: 1;
+}
+
+h2 {
+  color: aqua;
+}
+
+// 当使用第三方组件库的时候，如果有修改第三方组件的默认样式需求，需要 /deep/
+// 父组件中直接改造子组件的样式
+:deep(h5) {
+  color: green;
+}
+</style>

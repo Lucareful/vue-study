@@ -1,26 +1,60 @@
+<!--
+ * @Author: Luenci
+ * @Date: 2022-11-28 17:55:24
+ * @LastEditors: Luenci
+ * @LastEditTime: 2022-11-30 16:28:40
+ * @FilePath: /demo-frist/src/App.vue
+ * @Description: 
+ * 
+ * Copyright (c) 2022 by Luenci, All Rights Reserved. 
+-->
+
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div>
+    <div class="app-container">
+      <h1>APP 根组件 {{ countFromSon }}</h1>
+      <hr />
+      <Test></Test>
+      <hr />
+      <div class="box">
+        <!-- 渲染 Left 组件和 Right 组件 -->
+        <Left></Left>
+        <Right @numchange="getNumCount"></Right>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import Left from "@/components/Left.vue";
+import Right from "@/components/Right.vue";
+import Test from "@/components/Test.vue";
 
 export default {
-  name: "App",
+  data() {
+    return {
+      countFromSon: 0,
+    };
+  },
+  methods: {
+    getNumCount(val) {
+      this.countFromSon = val;
+    },
+  },
   components: {
-    HelloWorld,
+    Left,
+    Right,
+    Test,
   },
 };
 </script>
 
 <style lang="less">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.app-container {
+  padding: 1px 20px 20px;
+  background-color: #efefef;
+}
+.box {
+  display: flex;
 }
 </style>

@@ -1,3 +1,13 @@
+/*
+ * @Author: Luenci
+ * @Date: 2022-11-28 17:55:24
+ * @LastEditors: Luenci
+ * @LastEditTime: 2022-11-29 15:24:12
+ * @FilePath: /demo-frist/.eslintrc.js
+ * @Description:
+ *
+ * Copyright (c) 2022 by Luenci, All Rights Reserved.
+ */
 module.exports = {
   root: true,
   env: {
@@ -14,5 +24,6 @@ module.exports = {
   rules: {
     "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
     "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
+    "vue/multi-word-component-names": "off",
   },
 };
