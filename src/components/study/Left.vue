@@ -2,8 +2,8 @@
  * @Author: Luenci
  * @Date: 2022-11-29 14:50:26
  * @LastEditors: Luenci
- * @LastEditTime: 2022-11-30 18:15:33
- * @FilePath: /demo-frist/src/components/Left.vue
+ * @LastEditTime: 2022-12-01 11:34:08
+ * @FilePath: \vue-study\src\components\Left.vue
  * @Description: 
  * 
  * Copyright (c) 2022 by Luenci, All Rights Reserved. 
@@ -11,8 +11,9 @@
 <template>
   <div class="left-container">
     <h2>我是left</h2>
+    <button @click="resetNum()">重置子组件的值为0</button>
     <hr />
-    <Mycount :init="9"></Mycount>
+    <Mycount :init="9" ref="comCount"></Mycount>
     <hr />
     <button @click="send()">点我传递信息给我的好兄弟</button>
   </div>
@@ -29,6 +30,10 @@ export default {
     send() {
       // 通过 eventBus 发送数据
       eventBus.emit("share", this.str);
+    },
+    resetNum() {
+      console.log(this.$refs.comCount);
+      this.$refs.comCount.count = 0;
     },
   },
 };

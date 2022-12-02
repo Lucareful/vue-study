@@ -2,8 +2,8 @@
  * @Author: Luenci
  * @Date: 2022-11-30 14:11:59
  * @LastEditors: Luenci
- * @LastEditTime: 2022-11-30 15:31:42
- * @FilePath: /demo-frist/src/components/Test.vue
+ * @LastEditTime: 2022-12-01 11:19:37
+ * @FilePath: \vue-study\src\components\Test.vue
  * @Description: 
  * 
  * Copyright (c) 2022 by Luenci, All Rights Reserved. 
@@ -39,13 +39,15 @@ export default {
   },
   beforeCreate() {
     // console.log(this.info);
-    console.log(this.message);
+    // console.log(this.message);
     // this.show();
   },
   created() {
-    console.log(this.info);
     console.log(this.message);
     this.initInfo();
+  },
+  mounted() {
+    console.log(this.info);
   },
 };
 </script>

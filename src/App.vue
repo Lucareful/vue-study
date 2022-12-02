@@ -2,59 +2,76 @@
  * @Author: Luenci
  * @Date: 2022-11-28 17:55:24
  * @LastEditors: Luenci
- * @LastEditTime: 2022-11-30 16:28:40
- * @FilePath: /demo-frist/src/App.vue
+ * @LastEditTime: 2022-12-02 15:13:48
+ * @FilePath: \vue-study\src\App.vue
  * @Description: 
  * 
  * Copyright (c) 2022 by Luenci, All Rights Reserved. 
 -->
 
 <template>
-  <div>
-    <div class="app-container">
-      <h1>APP 根组件 {{ countFromSon }}</h1>
-      <hr />
-      <Test></Test>
-      <hr />
-      <div class="box">
-        <!-- 渲染 Left 组件和 Right 组件 -->
-        <Left></Left>
-        <Right @numchange="getNumCount"></Right>
-      </div>
-    </div>
+  <div class="common-layout">
+    <el-container>
+      <el-header>
+        <Headers></Headers>
+      </el-header>
+      <el-container>
+        <el-main>
+          <Goods
+            v-for="item in goods"
+            :key="item.id"
+            :title="item.goods_name"
+            :price="item.goods_price"
+            :image="item.goods_img"
+            :isChecked="item.goods_state"
+            :id="item.id"
+            @stateChange="getState"
+          ></Goods>
+        </el-main>
+      </el-container>
+      <el-footer>
+        <Footer></Footer>
+      </el-footer>
+    </el-container>
   </div>
 </template>
 
 <script>
-import Left from "@/components/Left.vue";
-import Right from "@/components/Right.vue";
-import Test from "@/components/Test.vue";
+import Headers from "@/components/Header/Headers.vue";
+import Goods from "@/components/Goods/Goods.vue";
+import Footer from "@/components/Footer/Footer.vue";
+import axios from "axios";
 
 export default {
   data() {
-    return {
-      countFromSon: 0,
-    };
+    return { goods: [] };
   },
   methods: {
-    getNumCount(val) {
-      this.countFromSon = val;
+    async getGoods() {
+      const { data: res } = await axios.get("https://www.escook.cn/api/cart");
+      if (res.status === 200) {
+        this.goods = res.list;
+      }
+    },
+    getState(e) {
+      // 监听子组件的传值，然后触发的逻辑
+      this.goods.some((item) => {
+        if (item.id === e.id) {
+          item.goods_state = e.value;
+          return true;
+        }
+      });
     },
   },
+  created() {
+    this.getGoods();
+  },
   components: {
-    Left,
-    Right,
-    Test,
+    Headers,
+    Goods,
+    Footer,
   },
 };
 </script>
 
-<style lang="less">
-.app-container {
-  padding: 1px 20px 20px;
-  background-color: #efefef;
-}
-.box {
-  display: flex;
-}
-</style>
+<style lang="less"></style>
