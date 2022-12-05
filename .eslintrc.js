@@ -3,8 +3,8 @@
  * @Author: Luenci
  * @Date: 2022-11-28 17:55:24
  * @LastEditors: Luenci
- * @LastEditTime: 2022-12-05 18:28:23
- * @FilePath: /demo-frist/.eslintrc.js
+ * @LastEditTime: 2022-12-05 22:26:12
+ * @FilePath: \vue-study\.eslintrc.js
  * @Description:
  *
  * Copyright (c) 2022 by Luenci, All Rights Reserved.

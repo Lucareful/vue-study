@@ -2,8 +2,8 @@
  * @Author: Luenci
  * @Date: 2022-11-29 14:50:26
  * @LastEditors: Luenci
- * @LastEditTime: 2022-12-05 17:38:31
- * @FilePath: /demo-frist/src/components/study/Right.vue
+ * @LastEditTime: 2022-12-05 21:45:44
+ * @FilePath: \vue-study\src\components\study\Right.vue
  * @Description: 
  * 
  * Copyright (c) 2022 by Luenci, All Rights Reserved. 
@@ -18,30 +18,30 @@
 </template>
 
 <script>
-import eventBus from "./evnetBus.js";
+import eventBus from './evnetBus.js'
 
 export default {
   data() {
     return {
       count: 0,
-      msgFromBro: "",
-    };
+      msgFromBro: ''
+    }
   },
   created() {
     // 为 bus 绑定自定义事件
-    eventBus.on("share", (val) => {
-      this.msgFromBro = val;
-      console.log(val);
-    });
+    eventBus.on('share', (val) => {
+      this.msgFromBro = val
+      console.log(val)
+    })
   },
   methods: {
     add() {
-      this.count += 1;
+      this.count += 1
       // 修改数据时，通过 $emit() 触发自定义事件
-      this.$emit("numchange", this.count);
-    },
-  },
-};
+      this.$emit('numchange', this.count)
+    }
+  }
+}
 </script>
 
 <style lang="less">

@@ -2,8 +2,8 @@
  * @Author: Luenci
  * @Date: 2022-12-05 10:53:31
  * @LastEditors: Luenci
- * @LastEditTime: 2022-12-05 18:28:44
- * @FilePath: /demo-frist/src/App.vue
+ * @LastEditTime: 2022-12-05 22:27:01
+ * @FilePath: \vue-study\src\App.vue
  * @Description: 
  * 
  * Copyright (c) 2022 by Luenci, All Rights Reserved. 
@@ -16,16 +16,7 @@
       </el-header>
       <el-container>
         <el-main>
-          <Goods
-            v-for="item in goods"
-            :id="item.id"
-            :key="item.id"
-            :title="item.goods_name"
-            :price="item.goods_price"
-            :image="item.goods_img"
-            :is-checked="item.goods_state"
-            @stateChange="getState"
-          ></Goods>
+          <Goods v-for="item in goods" :id="item.id" :key="item.id" :title="item.goods_name" :price="item.goods_price" :image="item.goods_img" :is-checked="item.goods_state" @stateChange="getState"></Goods>
         </el-main>
       </el-container>
       <el-footer>
@@ -36,42 +27,40 @@
 </template>
 
 <script>
-import Footers from "@/components/Footer/Footer.vue";
-import Goods from "@/components/Goods/Goods.vue";
-import Headers from "@/components/Header/Headers.vue";
+import Footers from '@/components/Footer/Footer.vue'
+import Goods from '@/components/Goods/Goods.vue'
+import Headers from '@/components/Header/Headers.vue'
 
 export default {
   components: {
     Headers,
     Goods,
-    Footers,
+    Footers
   },
   data() {
-    return { goods: [] };
+    return { goods: [] }
   },
   created() {
-    this.getGoods();
+    this.getGoods()
   },
   methods: {
     async getGoods() {
-      const { data: res } = await this.$http.get(
-        "https://www.escook.cn/api/cart"
-      );
+      const { data: res } = await this.$http.get('https://www.escook.cn/api/cart')
       if (res.status === 200) {
-        this.goods = res.list;
+        this.goods = res.list
       }
     },
     getState(e) {
       // 监听子组件的传值，然后触发的逻辑
       this.goods.some((item) => {
         if (item.id === e.id) {
-          item.goods_state = e.value;
-          return true;
+          item.goods_state = e.value
+          return true
         }
-      });
-    },
-  },
-};
+      })
+    }
+  }
+}
 </script>
 
 <style lang="less"></style>
