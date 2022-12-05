@@ -2,8 +2,8 @@
  * @Author: Luenci
  * @Date: 2022-11-29 14:50:26
  * @LastEditors: Luenci
- * @LastEditTime: 2022-12-01 11:34:08
- * @FilePath: \vue-study\src\components\Left.vue
+ * @LastEditTime: 2022-12-05 16:46:35
+ * @FilePath: /demo-frist/src/components/study/Left.vue
  * @Description: 
  * 
  * Copyright (c) 2022 by Luenci, All Rights Reserved. 

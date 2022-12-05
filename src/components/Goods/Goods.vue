@@ -2,8 +2,8 @@
  * @Author: Luenci
  * @Date: 2022-12-01 16:39:39
  * @LastEditors: Luenci
- * @LastEditTime: 2022-12-02 14:39:12
- * @FilePath: \vue-study\src\components\Goods\Goods.vue
+ * @LastEditTime: 2022-12-05 11:24:50
+ * @FilePath: /demo-frist/src/components/Goods/Goods.vue
  * @Description: 
  * 
  * Copyright (c) 2022 by Luenci, All Rights Reserved. 
@@ -13,7 +13,7 @@
   <div class="common-layout">
     <el-container>
       <el-aside width="200px">
-        <el-checkbox :checked="isChecked" @change="changeState"></el-checkbox>
+        <input type="checkbox" :checked="isChecked" @change="changeState" />
         <img :src="image" alt="" />
       </el-aside>
       <el-main>{{ title }}</el-main>
@@ -49,8 +49,9 @@ export default {
     return {};
   },
   methods: {
-    changeState(newState) {
+    changeState(e) {
       // 触发自定义事件，向父组件传值
+      const newState = e.target.checked;
       this.$emit("stateChange", { id: this.id, value: newState });
     },
   },
