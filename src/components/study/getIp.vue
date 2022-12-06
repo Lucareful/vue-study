@@ -2,8 +2,8 @@
  * @Author: Luenci
  * @Date: 2022-11-30 14:11:59
  * @LastEditors: Luenci
- * @LastEditTime: 2022-12-01 11:19:37
- * @FilePath: \vue-study\src\components\Test.vue
+ * @LastEditTime: 2022-12-06 16:23:25
+ * @FilePath: /demo-frist/src/components/study/getIp.vue
  * @Description: 
  * 
  * Copyright (c) 2022 by Luenci, All Rights Reserved. 
@@ -16,26 +16,12 @@
 
 <script>
 export default {
-  props: ["info"],
+  props: ['info'],
   data() {
     return {
-      message: "hello test Vue.js",
-      ip: "",
-    };
-  },
-  methods: {
-    show() {
-      console.log("调用了 Test 组件的 Show 方法！");
-    },
-    initInfo() {
-      const xhr = new XMLHttpRequest();
-      xhr.addEventListener("load", () => {
-        const result = JSON.parse(xhr.responseText);
-        this.ip = result.ip;
-      });
-      xhr.open("GET", "https://forge.speedtest.cn/api/location/info");
-      xhr.send();
-    },
+      message: 'hello test Vue.js',
+      ip: '',
+    }
   },
   beforeCreate() {
     // console.log(this.info);
@@ -43,13 +29,27 @@ export default {
     // this.show();
   },
   created() {
-    console.log(this.message);
-    this.initInfo();
+    console.log(this.message)
+    this.initInfo()
   },
   mounted() {
-    console.log(this.info);
+    console.log(this.info)
   },
-};
+  methods: {
+    show() {
+      console.log('调用了 Test 组件的 Show 方法！')
+    },
+    initInfo() {
+      const xhr = new XMLHttpRequest()
+      xhr.addEventListener('load', () => {
+        const result = JSON.parse(xhr.responseText)
+        this.ip = result.ip
+      })
+      xhr.open('GET', 'https://forge.speedtest.cn/api/location/info')
+      xhr.send()
+    },
+  },
+}
 </script>
 
 <style lang="less" scoped>

@@ -1,9 +1,8 @@
-/* eslint-disable prettier/prettier */
 /*
  * @Author: Luenci
  * @Date: 2022-11-28 17:55:24
  * @LastEditors: Luenci
- * @LastEditTime: 2022-12-06 09:56:53
+ * @LastEditTime: 2022-12-06 10:58:33
  * @FilePath: /demo-frist/.eslintrc.js
  * @Description:
  *

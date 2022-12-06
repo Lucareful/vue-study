@@ -2,7 +2,7 @@
  * @Author: Luenci
  * @Date: 2022-11-29 14:50:26
  * @LastEditors: Luenci
- * @LastEditTime: 2022-12-05 16:46:35
+ * @LastEditTime: 2022-12-06 17:35:16
  * @FilePath: /demo-frist/src/components/study/Left.vue
  * @Description: 
  * 
@@ -11,7 +11,16 @@
 <template>
   <div class="left-container">
     <h2>我是left</h2>
+    <el-menu class="el-menu-demo" mode="horizontal">
+      <el-menu-item index="4">
+        <router-link to="/left/ip">ip tab</router-link>
+      </el-menu-item>
+    </el-menu>
+
     <button @click="resetNum()">重置子组件的值为0</button>
+
+    <router-view></router-view>
+
     <hr />
     <Mycount :init="9" ref="comCount"></Mycount>
     <hr />
@@ -20,23 +29,23 @@
 </template>
 
 <script>
-import eventBus from "./evnetBus.js";
+import eventBus from './evnetBus.js'
 
 export default {
   data() {
-    return { str: "luenci 兄弟组件传值" };
+    return { str: 'luenci 兄弟组件传值' }
   },
   methods: {
     send() {
       // 通过 eventBus 发送数据
-      eventBus.emit("share", this.str);
+      eventBus.emit('share', this.str)
     },
     resetNum() {
-      console.log(this.$refs.comCount);
-      this.$refs.comCount.count = 0;
+      console.log(this.$refs.comCount)
+      this.$refs.comCount.count = 0
     },
   },
-};
+}
 </script>
 
 <style lang="less" scoped>
