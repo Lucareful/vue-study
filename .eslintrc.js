@@ -3,8 +3,8 @@
  * @Author: Luenci
  * @Date: 2022-11-28 17:55:24
  * @LastEditors: Luenci
- * @LastEditTime: 2022-12-05 22:26:12
- * @FilePath: \vue-study\.eslintrc.js
+ * @LastEditTime: 2022-12-06 09:56:53
+ * @FilePath: /demo-frist/.eslintrc.js
  * @Description:
  *
  * Copyright (c) 2022 by Luenci, All Rights Reserved.
@@ -14,11 +14,10 @@ module.exports = {
   env: {
     node: true,
   },
-  extends: ['plugin:vue/vue3-essential', 'eslint:recommended', 'prettier'],
+  extends: ['plugin:vue/vue3-essential', 'eslint:recommended'],
   parserOptions: {
     parser: '@babel/eslint-parser',
   },
-  plugins: ['prettier'],
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
@@ -61,12 +60,6 @@ module.exports = {
           ['template', 'render'],
           'renderError',
         ],
-      },
-    ],
-    'prettier/prettier': [
-      'error',
-      {
-        endOfLine: 'auto',
       },
     ],
   },

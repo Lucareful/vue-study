@@ -2,8 +2,8 @@
  * @Author: Luenci
  * @Date: 2022-12-05 10:53:31
  * @LastEditors: Luenci
- * @LastEditTime: 2022-12-05 22:27:01
- * @FilePath: \vue-study\src\App.vue
+ * @LastEditTime: 2022-12-06 09:54:16
+ * @FilePath: /demo-frist/src/App.vue
  * @Description: 
  * 
  * Copyright (c) 2022 by Luenci, All Rights Reserved. 
@@ -35,7 +35,7 @@ export default {
   components: {
     Headers,
     Goods,
-    Footers
+    Footers,
   },
   data() {
     return { goods: [] }
@@ -58,8 +58,8 @@ export default {
           return true
         }
       })
-    }
-  }
+    },
+  },
 }
 </script>
 

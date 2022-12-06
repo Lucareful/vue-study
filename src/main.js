@@ -2,8 +2,8 @@
  * @Author: Luenci
  * @Date: 2022-12-05 10:53:31
  * @LastEditors: Luenci
- * @LastEditTime: 2022-12-05 21:51:19
- * @FilePath: \vue-study\src\main.js
+ * @LastEditTime: 2022-12-06 09:57:40
+ * @FilePath: /demo-frist/src/main.js
  * @Description:
  *
  * Copyright (c) 2022 by Luenci, All Rights Reserved.
@@ -17,7 +17,7 @@ import { createApp } from 'vue'
 
 export const vueApp = createApp(App)
 
-vueApp.config.globalProperties.$http = axios 
+vueApp.config.globalProperties.$http = axios
 
 vueApp.use(ElementUI)
 
