@@ -2,7 +2,7 @@
  * @Author: Luenci
  * @Date: 2022-12-05 17:27:44
  * @LastEditors: Luenci
- * @LastEditTime: 2022-12-07 14:08:00
+ * @LastEditTime: 2022-12-07 16:50:16
  * @FilePath: /demo-frist/src/router/index.js
  * @Description:
  *

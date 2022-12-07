@@ -2,7 +2,7 @@
 // 导入axios
 import axios from 'axios'
 // 使用element-ui Message做消息提醒
-import { Message } from 'element-ui'
+import { ElMessage } from 'element-plus'
 
 //1. 创建新的axios实例，
 const request = axios.create({
@@ -89,12 +89,12 @@ request.interceptors.response.use(
     } else {
       // 超时处理
       if (JSON.stringify(error).includes('timeout')) {
-        Message.error('服务器响应超时，请刷新当前页')
+        ElMessage.error('服务器响应超时，请刷新当前页')
       }
       error.message = '连接服务器失败'
     }
 
-    Message.error(error.message)
+    ElMessage.error(error.message)
     /***** 处理结束 *****/
     //如果不需要错误处理，以上的处理过程都可省略
     return Promise.resolve(error.response)

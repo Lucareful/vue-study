@@ -2,7 +2,7 @@
  * @Author: Luenci
  * @Date: 2022-12-01 16:39:39
  * @LastEditors: Luenci
- * @LastEditTime: 2022-12-06 09:58:19
+ * @LastEditTime: 2022-12-07 16:47:11
  * @FilePath: /demo-frist/src/components/Goods/Goods.vue
  * @Description: 
  * 
@@ -20,7 +20,7 @@
       <el-main>{{ price }}</el-main>
     </el-container>
   </div>
-</template> 
+</template>
 
 <script>
 export default {
@@ -30,7 +30,7 @@ export default {
       type: Number,
     },
     title: {
-      default: "",
+      default: '',
       type: String,
     },
     isChecked: {
@@ -38,7 +38,7 @@ export default {
       type: Boolean,
     },
     image: {
-      default: "",
+      default: '',
     },
     id: {
       required: true,
@@ -46,16 +46,16 @@ export default {
     },
   },
   data() {
-    return {};
+    return {}
   },
   methods: {
     changeState(e) {
       // 触发自定义事件，向父组件传值
-      const newState = e.target.checked;
-      this.$emit("stateChange", { id: this.id, value: newState });
+      const newState = e.target.checked
+      this.$emit('stateChange', { id: this.id, value: newState })
     },
   },
-};
+}
 </script>
 
 <style></style>
