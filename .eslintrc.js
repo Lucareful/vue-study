@@ -2,7 +2,7 @@
  * @Author: Luenci
  * @Date: 2022-11-28 17:55:24
  * @LastEditors: Luenci
- * @LastEditTime: 2022-12-06 10:58:33
+ * @LastEditTime: 2022-12-07 09:49:58
  * @FilePath: /demo-frist/.eslintrc.js
  * @Description:
  *
@@ -20,6 +20,7 @@ module.exports = {
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-unused-vars': ['warn', { vars: 'all', args: 'after-used', ignoreRestSiblings: false }],
     'vue/multi-word-component-names': 'off',
     'vue/order-in-components': [
       'error',
